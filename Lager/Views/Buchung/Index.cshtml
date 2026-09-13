@@ -1,0 +1,75 @@
+@model IEnumerable<Lager.Models.Buchung>
+
+@{
+    ViewData["Title"] = "Buchungen";
+}
+
+<h1>Buchungen</h1>
+
+<p>
+    <a asp-action="Create"
+       class="btn btn-primary">
+        Neue Buchung hinzufügen
+    </a>
+</p>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Artikel</th>
+            <th>Datum</th>
+            <th>Menge</th>
+            <th>Preis pro Stück</th>
+            <th>Wert</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Artikel.Artikelname
+                </td>
+
+                <td>
+                    @item.Datum.ToString("dd.MM.yyyy HH:mm")
+                </td>
+
+                <td>
+                    @item.Menge
+                </td>
+
+                <td>
+                    @item.Preis.ToString("C")
+                </td>
+
+                <td>
+                    @((item.Menge * item.Preis).ToString("C"))
+                </td>
+
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@item.Id">
+                        Bearbeiten
+                    </a>
+                    |
+                    <a asp-action="Details"
+                       asp-route-id="@item.Id">
+                        Details
+                    </a>
+                    |
+                    <a asp-action="Delete"
+                       asp-route-id="@item.Id">
+                        Löschen
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

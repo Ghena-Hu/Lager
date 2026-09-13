@@ -1,0 +1,46 @@
+@model Lager.Models.Buchung
+
+@{
+    ViewData["Title"] = "Buchungsdetails";
+}
+
+<h1>Buchungsdetails</h1>
+
+<hr />
+
+<dl class="row">
+
+    <dt class="col-sm-3">Artikel</dt>
+    <dd class="col-sm-9">@Model.Artikel.Artikelname</dd>
+
+    <dt class="col-sm-3">Artikelnummer</dt>
+    <dd class="col-sm-9">@Model.Artikel.Artikelnummer</dd>
+
+    <dt class="col-sm-3">Datum</dt>
+    <dd class="col-sm-9">@Model.Datum.ToString("dd.MM.yyyy HH:mm")</dd>
+
+    <dt class="col-sm-3">Menge</dt>
+    <dd class="col-sm-9">@Model.Menge</dd>
+
+    <dt class="col-sm-3">Preis pro Stück</dt>
+    <dd class="col-sm-9">@Model.Preis.ToString("C")</dd>
+
+    <dt class="col-sm-3">Gesamtwert</dt>
+    <dd class="col-sm-9">
+        @((Model.Menge * Model.Preis).ToString("C"))
+    </dd>
+
+</dl>
+
+<div>
+    <a asp-action="Edit"
+       asp-route-id="@Model.Id"
+       class="btn btn-primary">
+        Bearbeiten
+    </a>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Zurück
+    </a>
+</div>

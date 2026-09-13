@@ -1,0 +1,54 @@
+@model Lager.Models.Artikel
+
+@{
+    ViewData["Title"] = "Artikel hinzufügen";
+}
+
+<h1>Artikel hinzufügen</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Artikelnummer" class="control-label">
+                    Artikelnummer
+                </label>
+                <input asp-for="Artikelnummer" class="form-control" />
+                <span asp-validation-for="Artikelnummer" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Artikelname" class="control-label">
+                    Artikelname
+                </label>
+                <input asp-for="Artikelname" class="form-control" />
+                <span asp-validation-for="Artikelname" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Beschreibung" class="control-label">
+                    Beschreibung
+                </label>
+                <textarea asp-for="Beschreibung" class="form-control"></textarea>
+                <span asp-validation-for="Beschreibung" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Artikel hinzufügen" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">
+                    Zurück
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

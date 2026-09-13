@@ -1,0 +1,50 @@
+@model Lager.Models.Artikel
+
+@{
+    ViewData["Title"] = "Artikeldetails";
+}
+
+<h1>Artikeldetails</h1>
+
+<hr />
+
+<dl class="row">
+
+    <dt class="col-sm-3">
+        Artikelnummer
+    </dt>
+
+    <dd class="col-sm-9">
+        @Model.Artikelnummer
+    </dd>
+
+    <dt class="col-sm-3">
+        Artikelname
+    </dt>
+
+    <dd class="col-sm-9">
+        @Model.Artikelname
+    </dd>
+
+    <dt class="col-sm-3">
+        Beschreibung
+    </dt>
+
+    <dd class="col-sm-9">
+        @Model.Beschreibung
+    </dd>
+
+</dl>
+
+<div>
+    <a asp-action="Edit"
+       asp-route-id="@Model.Id"
+       class="btn btn-primary">
+        Bearbeiten
+    </a>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Zurück
+    </a>
+</div>

@@ -1,0 +1,102 @@
+@model Lager.Models.Buchung
+
+@{
+    ViewData["Title"] = "Buchung hinzufügen";
+}
+
+<h1>Buchung hinzufügen</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+
+        <form asp-action="Create" method="post">
+
+            <div asp-validation-summary="All"
+                 class="text-danger mb-3"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ArtikelId" class="control-label">
+                    Artikel
+                </label>
+
+                <select asp-for="ArtikelId"
+                        class="form-control"
+                        asp-items="ViewBag.ArtikelListe">
+                    <option value="0">-- Artikel auswählen --</option>
+                </select>
+
+                <span asp-validation-for="ArtikelId"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Datum" class="control-label">
+                    Datum
+                </label>
+
+                <input asp-for="Datum"
+                       class="form-control"
+                       type="datetime-local" />
+
+                <span asp-validation-for="Datum"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Menge" class="control-label">
+                    Menge
+                </label>
+
+                <input asp-for="Menge"
+                       class="form-control"
+                       type="number"
+                       step="1" />
+
+                <span asp-validation-for="Menge"
+                      class="text-danger"></span>
+
+                <small class="form-text text-muted">
+                    Positive Zahl = Wareneingang,
+                    negative Zahl = Warenausgang.
+                </small>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Preis" class="control-label">
+                    Einkaufspreis pro Stück
+                </label>
+
+                <input asp-for="Preis"
+                       class="form-control"
+                       type="number"
+                       step="0.01"
+                       min="0" />
+
+                <span asp-validation-for="Preis"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit"
+                        class="btn btn-primary">
+                    Buchung speichern
+                </button>
+
+                <a asp-action="Index"
+                   class="btn btn-secondary">
+                    Zurück
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

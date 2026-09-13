@@ -1,0 +1,180 @@
+html {
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    background-color: #f5f6f8;
+    color: #212529;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navigation */
+
+.navbar {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #1f2937 !important;
+}
+
+.nav-link {
+    color: #495057 !important;
+    margin-right: 10px;
+}
+
+    .nav-link:hover {
+        color: #0d6efd !important;
+    }
+
+/* Hauptbereich */
+
+.container {
+    max-width: 1200px;
+}
+
+main {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Überschriften */
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/* Tabellen */
+
+.table {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+}
+
+    .table th {
+        background-color: #f1f3f5;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .table td,
+    .table th {
+        padding: 12px;
+        vertical-align: middle;
+    }
+
+    .table tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+
+/* Buttons */
+
+.btn {
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+/* Formulare */
+
+.form-control,
+.form-select {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #86b7fe;
+        box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.15);
+    }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Fehlermeldungen */
+
+.text-danger {
+    font-size: 0.9rem;
+}
+
+/* Karten */
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Lagerübersicht */
+
+.lager-card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.lager-card-title {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.lager-card-value {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/* Footer */
+
+.footer {
+    background-color: #ffffff;
+    padding: 15px 0;
+    margin-top: 30px;
+}

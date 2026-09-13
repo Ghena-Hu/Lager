@@ -1,0 +1,46 @@
+@model Lager.Models.Buchung
+
+@{
+    ViewData["Title"] = "Buchung löschen";
+}
+
+<h1>Buchung löschen</h1>
+
+<h3>Möchten Sie diese Buchung wirklich löschen?</h3>
+
+<hr />
+
+<dl class="row">
+
+    <dt class="col-sm-3">Artikel</dt>
+    <dd class="col-sm-9">@Model.Artikel.Artikelname</dd>
+
+    <dt class="col-sm-3">Artikelnummer</dt>
+    <dd class="col-sm-9">@Model.Artikel.Artikelnummer</dd>
+
+    <dt class="col-sm-3">Datum</dt>
+    <dd class="col-sm-9">@Model.Datum.ToString("dd.MM.yyyy HH:mm")</dd>
+
+    <dt class="col-sm-3">Menge</dt>
+    <dd class="col-sm-9">@Model.Menge</dd>
+
+    <dt class="col-sm-3">Preis</dt>
+    <dd class="col-sm-9">@Model.Preis.ToString("C")</dd>
+
+</dl>
+
+<form asp-action="Delete">
+
+    <input type="hidden"
+           asp-for="Id" />
+
+    <input type="submit"
+           value="Löschen"
+           class="btn btn-danger" />
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Abbrechen
+    </a>
+
+</form>
